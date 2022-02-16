@@ -13,28 +13,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+//Route::get('/', function () {
+//    return'Halaman Home';
+//});
+
+//Route::get('/about', function () {
+//    return'Halaman About';
+//});
+
+//Route::get('/gallery', function () {
+//    return'Halaman Gallery';
+//});
 
 Route::get('/', function () {
-    return'Halaman Home';
-});
-
-Route::get('/about', function () {
-    return'Halaman About';
-});
-
-Route::get('/gallery', function () {
-    return'Halaman Gallery';
-});
-
-Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        "title" => "Home"
+    ]);
 });
 
 Route::get('/about', function () {
     return view('about',[
+        "title" => "About",
         "nama" => "Paringga Pinka Taloka",
         "email" => "3103120173@student.smktelkom-pwt.sch.id",
         "gambar" => "haruto.jpg"
@@ -42,5 +45,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/gallery', function () {
-    return view('gallery');
+    return view('gallery', [
+       "title" => "Gallery"
+    ]);
 });
